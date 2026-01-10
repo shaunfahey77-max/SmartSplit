@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="ringsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A9D8F"></stop>
+      <stop offset="50%" stop-color="#1B7A6D"></stop>
+      <stop offset="100%" stop-color="#F76E50"></stop>
+    </linearGradient>
+  </defs>
+  <ellipse cx="60" cy="60" rx="45" ry="45" fill="url(#ringsGradient)"></ellipse>
+  <ellipse cx="60" cy="45" rx="45" ry="15" fill="white" opacity="0.15"></ellipse>
+</svg>

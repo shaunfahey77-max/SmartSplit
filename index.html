@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SmartSplit Brand Guide – Official Brand Identity System" />
+  <meta name="author" content="SmartSplit Team" />
+  <title>SmartSplit Brand Guide – Final</title>
+
+  <!-- Local Inter Fonts -->
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Medium.woff2') format('woff2');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+
+    :root {
+      --mint: #2A9D8F;
+      --coral: #F76E50;
+      --orange: #F4A261;
+      --charcoal: #2C2C2C;
+      --white: #F9F9F9;
+      --transition: 0.4s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--charcoal);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--mint), var(--coral));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header img {
+      max-width: 220px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .logo-box {
+      text-align: center;
+      padding: 1.5rem;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      flex: 1 1 280px;
+    }
+
+    .logo-box img {
+      max-width: 180px;
+      margin-bottom: 0.5rem;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .color-swatch div {
+      flex: 1 1 160px;
+      border-radius: 8px;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 600;
+    }
+
+    .color-mint { background: var(--mint); }
+    .color-coral { background: var(--coral); }
+    .color-orange { background: var(--orange); }
+    .color-charcoal { background: var(--charcoal); }
+    .color-white { background: var(--white); color: #000; border: 1px solid #ccc; }
+
+    footer {
+      background: var(--charcoal);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/smartsplit-horizontal-color.svg" alt="SmartSplit Logo" />
+    <h1>SmartSplit Brand Guide</h1>
+    <p>Official visual identity system – 2026 Edition</p>
+  </header>
+
+  <main>
+    <h2>Logo Variants</h2>
+    <div class="logo-row">
+      <div class="logo-box">
+        <img src="assets/smartsplit-horizontal-color.svg" alt="SmartSplit Primary Logo" />
+        <p>Primary Logo</p>
+      </div>
+      <div class="logo-box" style="background:#2C2C2C;">
+        <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit White Logo" />
+        <p style="color:#fff;">White Logo (Dark BG)</p>
+      </div>
+      <div class="logo-box">
+        <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon" />
+        <p>Icon Only</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <h2>Color Palette</h2>
+    <div class="color-swatch">
+      <div class="color-mint">Mint Green<br>#2A9D8F</div>
+      <div class="color-coral">Coral<br>#F76E50</div>
+      <div class="color-orange">Soft Orange<br>#F4A261</div>
+      <div class="color-charcoal">Charcoal<br>#2C2C2C</div>
+      <div class="color-white">Soft White<br>#F9F9F9</div>
+    </div>
+
+    <hr />
+
+    <h2>Typography</h2>
+    <p><strong>Heading:</strong> Inter Bold<br>
+       <strong>Body:</strong> Inter Regular<br>
+       <strong>UI Elements:</strong> Inter Medium</p>
+
+    <hr />
+
+    <h2>Usage Notes</h2>
+    <p>Maintain clear space equal to the height of one ring around the logo.  
+       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2026 SmartSplit. All rights reserved.</p>
+  </footer>
+</body>
+</html>
