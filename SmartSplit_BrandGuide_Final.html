@@ -1,216 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SmartSplit Brand Guide – Official Brand Identity System">
-  <meta name="author" content="SmartSplit Team">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SmartSplit Brand Guide – Official Brand Identity System" />
+  <meta name="author" content="SmartSplit Team" />
   <title>SmartSplit Brand Guide – Final</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="manifest" href="assets/site.webmanifest">
-  <link rel="mask-icon" href="assets/favicon.svg" color="#2A9D8F">
-  <link rel="shortcut icon" href="assets/favicon.ico">
-
-  <meta name="apple-mobile-web-app-title" content="SmartSplit">
-  <meta name="application-name" content="SmartSplit">
-  <meta name="msapplication-TileColor" content="#F4A261">
-  <meta name="theme-color" content="#2A9D8F">
-
+  <!-- Local Inter Fonts -->
   <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Medium.woff2') format('woff2');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+
     :root {
-      --mint:#2A9D8F;
-      --mint-dark:#1B7A6D;
-      --orange:#F4A261;
-      --coral:#F76E50;
-      --charcoal:#2C2C2C;
-      --white:#F9F9F9;
+      --mint: #2A9D8F;
+      --coral: #F76E50;
+      --orange: #F4A261;
+      --charcoal: #2C2C2C;
+      --white: #F9F9F9;
+      --transition: 0.4s ease;
     }
 
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: var(--charcoal);
-    }
-
-    header {
-      background: linear-gradient(90deg, var(--mint) 0%, var(--mint-dark) 50%, var(--coral) 100%);
-      padding: 1rem 2rem;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      font-weight: 600;
-    }
-
-    header img {
-      height: 28px;
-      width: auto;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    h2 {
-      font-weight: 700;
-      margin-top: 3rem;
-      border-bottom: 2px solid var(--mint);
-      padding-bottom: 0.5rem;
-    }
-
-    p {
+      background-color: #F8F8F8;
+      color: #222;
+      margin: 0;
       line-height: 1.6;
     }
 
-    /* --- Logo Section --- */
+    /* HEADER */
+    header {
+      position: relative;
+      background: linear-gradient(90deg, #F76E50 0%, #2A9D8F 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header img {
+      max-width: 260px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    /* LOGO SECTION */
     .logo-row {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
       flex-wrap: wrap;
-      margin-top: 1.5rem;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
     }
 
     .logo-box {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       text-align: center;
-      flex: 1 1 250px;
-      max-width: 300px;
+      padding: 2rem;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      flex: 1 1 300px;
+      transition: transform 0.2s ease;
     }
 
-    .logo-box.dark-bg {
-      background: #2C2C2C;
+    .logo-box:hover {
+      transform: translateY(-3px);
     }
 
     .logo-box img {
-      max-height: 70px;
-      width: auto;
-      margin-bottom: 1rem;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 0.75rem;
+      height: auto;
     }
 
+    .logo-box:first-child img {
+      max-width: 280px; /* Primary Gradient Logo */
+    }
+
+    .logo-box.dark-bg img {
+      max-width: 240px; /* White Logo on Dark Background */
+    }
+
+    .logo-box:last-child img {
+      max-width: 160px; /* Icon Only */
+    }
+
+    .dark-bg {
+      background: #2C2C2C;
+    }
+
+    .dark-bg p {
+      color: #fff;
+    }
+
+    /* COLOR PALETTE */
     .color-swatch {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1.5rem;
     }
 
     .color-swatch div {
-      flex: 1 1 150px;
+      flex: 1 1 160px;
       border-radius: 8px;
-      padding: 1rem;
+      color: #fff;
       text-align: center;
-      color: #fff;
+      padding: 1rem;
       font-weight: 600;
     }
 
-    .color-swatch .light {
-      color: #000;
-      border: 1px solid #ccc;
-    }
-
-    /* Typography */
-    h3 {
-      font-weight: 700;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn.primary {
-      background: var(--orange);
-      color: #fff;
-    }
-
-    .btn.primary:hover {
-      background: #e68e4a;
-    }
+    .color-mint { background: var(--mint); }
+    .color-coral { background: var(--coral); }
+    .color-orange { background: var(--orange); }
+    .color-charcoal { background: var(--charcoal); }
+    .color-white { background: var(--white); color: #000; border: 1px solid #ccc; }
 
     footer {
+      background: var(--charcoal);
+      color: var(--white);
       text-align: center;
-      font-size: 0.9rem;
       padding: 2rem 1rem;
-      color: var(--charcoal);
-    }
-
-    footer span {
-      color: var(--coral);
+      font-size: 0.9rem;
     }
   </style>
 </head>
-<body>
- <header style="background: linear-gradient(90deg, #2A9D8F 0%, #F4A261 100%); color: #fff; text-align: center; padding: 3rem 1rem;">
-  <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit Logo" style="max-width: 220px; margin-bottom: 1rem;">
-  <h1>SmartSplit Brand Guide</h1>
-  <p>Official visual identity system – 2026 Edition</p>
-</header>
 
+<body>
+  <header>
+    <img src="assets/SmartSplit_Gradient.svg" alt="SmartSplit Logo" />
+    <h1>SmartSplit Brand Guide</h1>
+    <p>Official visual identity system – 2026 Edition</p>
+  </header>
 
   <main>
     <h2>Logo Variants</h2>
-<div class="logo-row">
-  <div class="logo-box">
-    <img src="assets/smartsplit-horizontal-color.svg" alt="SmartSplit Primary Gradient Logo" />
-    <p>Primary Gradient Logo</p>
-  </div>
-  <div class="logo-box dark-bg">
-    <img src="assets/smartsplit-horizontal-white.svg" alt="White Logo (Dark Background)" />
-    <p>White Logo (Dark Background)</p>
-  </div>
-  <div class="logo-box">
-    <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon (Teal/Coral Rings)" />
-    <p>Icon-Only Mark</p>
-  </div>
-</div>
+    <div class="logo-row">
+      <div class="logo-box">
+        <img src="assets/SmartSplit_Gradient.svg" alt="SmartSplit Primary Gradient Logo">
+        <p>Primary Gradient Logo</p>
+      </div>
+      <div class="logo-box dark-bg">
+        <img src="assets/smartsplit-horizontal-white.svg" alt="White Logo (Dark BG)">
+        <p>White Logo (Dark Background)</p>
+      </div>
+      <div class="logo-box">
+        <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo">
+        <p>Icon Only</p>
+      </div>
+    </div>
 
+    <hr />
 
     <h2>Color Palette</h2>
     <div class="color-swatch">
-      <div style="background:#F4A261;">Soft Orange<br>#F4A261</div>
-      <div style="background:#4A90E2;">Slate Blue<br>#4A90E2</div>
-      <div style="background:#2A9D8F;">Mint Green<br>#2A9D8F</div>
-      <div class="light" style="background:#F9F9F9;">Soft White<br>#F9F9F9</div>
-      <div style="background:#2C2C2C;">Charcoal<br>#2C2C2C</div>
+      <div class="color-mint">Mint Green<br>#2A9D8F</div>
+      <div class="color-coral">Coral<br>#F76E50</div>
+      <div class="color-orange">Soft Orange<br>#F4A261</div>
+      <div class="color-charcoal">Charcoal<br>#2C2C2C</div>
+      <div class="color-white">Soft White<br>#F9F9F9</div>
     </div>
 
-    <h2>Typography</h2>
-    <h3>Heading 1 – Inter Bold</h3>
-    <h3 style="font-weight:600;">Heading 2 – Inter SemiBold</h3>
-    <p>Body Text – Inter Regular. This is the default body copy used throughout SmartSplit for clarity and readability.</p>
-    <a class="btn primary">Primary Button</a>
+    <hr />
 
-    <h2>Usage Guidelines</h2>
-    <p>Maintain clear space equal to the height of one ring around the logo. Do not alter colors or proportions. Ensure sufficient contrast on backgrounds. The white logo is for use only on dark backgrounds. The gradient logo is the primary version for digital use.</p>
+    <h2>Typography</h2>
+    <p><strong>Heading:</strong> Inter Bold<br>
+       <strong>Body:</strong> Inter Regular<br>
+       <strong>UI Elements:</strong> Inter Medium</p>
+
+    <hr />
+
+    <h2>Usage Notes</h2>
+    <p>Maintain clear space equal to the height of one ring around the logo.<br>
+       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.</p>
   </main>
 
   <footer>
-    © 2026 SmartSplit — Built with <span>❤</span> for clarity and compassion.
+    <p>© 2026 SmartSplit. All rights reserved.</p>
   </footer>
 </body>
 </html>
