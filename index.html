@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SmartSplit Brand Guide – Official Brand Identity System" />
   <meta name="author" content="SmartSplit Team" />
-  <title>SmartSplit Brand Guide – 2026 Edition</title>
+  <title>SmartSplit Brand Guide – Final</title>
 
   <!-- Local Inter Fonts -->
   <style>
@@ -31,6 +31,7 @@
       --orange: #F4A261;
       --charcoal: #2C2C2C;
       --white: #F9F9F9;
+      --transition: 0.4s ease;
     }
 
     body {
@@ -42,7 +43,7 @@
     }
 
     header {
-      background: linear-gradient(90deg, #2A9D8F 0%, #F4A261 100%);
+      background: linear-gradient(90deg, var(--coral) 0%, var(--mint) 100%);
       color: white;
       text-align: center;
       padding: 3rem 1rem;
@@ -50,7 +51,8 @@
 
     header img {
       max-width: 220px;
-      margin-bottom: 1rem;
+      display: block;
+      margin: 0 auto 1rem;
     }
 
     main {
@@ -74,17 +76,35 @@
 
     .logo-box {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
       border: 1px solid #eee;
       border-radius: 8px;
       background: #fff;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      flex: 1 1 280px;
+      flex: 1 1 300px;
+      transition: transform 0.2s ease;
+    }
+
+    .logo-box:hover {
+      transform: translateY(-3px);
     }
 
     .logo-box img {
-      max-width: 180px;
-      margin-bottom: 0.5rem;
+      display: block;
+      margin: 0 auto 0.75rem;
+      height: auto;
+    }
+
+    .logo-box:first-child img {
+      max-width: 260px; /* Primary Gradient Logo */
+    }
+
+    .logo-box.dark-bg img {
+      max-width: 240px; /* White Logo on Dark Background */
+    }
+
+    .logo-box:last-child img {
+      max-width: 160px; /* Icon Only */
     }
 
     .dark-bg {
@@ -137,15 +157,15 @@
     <h2>Logo Variants</h2>
     <div class="logo-row">
       <div class="logo-box">
-        <img src="assets/smartsplit-horizontal-color.svg" alt="SmartSplit Primary Gradient Logo">
+        <img src="assets/SmartSplit_Gradient.svg" alt="SmartSplit Primary Gradient Logo" />
         <p>Primary Gradient Logo</p>
       </div>
       <div class="logo-box dark-bg">
-        <img src="assets/smartsplit-horizontal-white.svg" alt="White Logo (Dark BG)">
+        <img src="assets/smartsplit-horizontal-white.svg" alt="White Logo (Dark BG)" />
         <p>White Logo (Dark Background)</p>
       </div>
       <div class="logo-box">
-        <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo">
+        <img src="assets/SmartSplit_Icon_Gloss.svg" alt="SmartSplit Icon Logo" />
         <p>Icon-Only Mark</p>
       </div>
     </div>
@@ -171,9 +191,8 @@
     <hr />
 
     <h2>Usage Notes</h2>
-    <p>Maintain clear space equal to the height of one ring around the logo.<br>
-       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.<br>
-       The white logo is for dark backgrounds; the gradient logo is primary for digital use.</p>
+    <p>Maintain clear space equal to the height of one ring around the logo.  
+       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.</p>
   </main>
 
   <footer>
