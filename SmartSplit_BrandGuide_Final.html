@@ -44,25 +44,10 @@
 
     /* HEADER */
     header {
-      position: relative;
       background: linear-gradient(90deg, #F76E50 0%, #2A9D8F 100%);
-      padding: 3rem 1rem;
+      color: white;
       text-align: center;
-      color: #fff;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(4px);
-    }
-
-    header * {
-      position: relative;
-      z-index: 1;
+      padding: 3rem 1rem;
     }
 
     header img {
@@ -71,7 +56,7 @@
       margin: 0 auto 1rem;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN */
     main {
       max-width: 960px;
       margin: 2rem auto;
@@ -87,7 +72,7 @@
       margin-bottom: 1em;
     }
 
-    /* LOGO SECTION */
+    /* LOGO GRID */
     .logo-row {
       display: flex;
       flex-wrap: wrap;
@@ -122,7 +107,7 @@
     }
 
     .logo-box.dark-bg img {
-      max-width: 240px; /* White Logo on Dark Background */
+      max-width: 240px; /* White Logo */
     }
 
     .logo-box:last-child img {
@@ -171,61 +156,57 @@
 
 <body>
   <header>
-    <img src="assets/SmartSplit_Gradient.svg" alt="SmartSplit Logo" />
+    <img src="assets/smartsplit-horizontal-color.png" alt="SmartSplit Logo" />
     <h1>SmartSplit Brand Guide</h1>
     <p>Official visual identity system – 2026 Edition</p>
   </header>
 
-<main>
-  <h2>Logo Variants</h2>
-  <div class="logo-row">
-    <!-- ✅ Primary Gradient Logo -->
-    <div class="logo-box">
-      <img src="assets/smartsplit-horizontal-color.svg" alt="SmartSplit Primary Gradient Logo">
-      <p>Primary Gradient Logo</p>
+  <main>
+    <h2>Logo Variants</h2>
+    <div class="logo-row">
+      <!-- ✅ Primary Gradient Logo -->
+      <div class="logo-box">
+        <img src="assets/smartsplit-horizontal-color.png" alt="SmartSplit Primary Gradient Logo">
+        <p>Primary Gradient Logo</p>
+      </div>
+
+      <!-- ✅ White Logo on Dark Background -->
+      <div class="logo-box dark-bg">
+        <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit White Logo (Dark Background)">
+        <p>White Logo (Dark Background)</p>
+      </div>
+
+      <!-- ✅ Icon Only -->
+      <div class="logo-box">
+        <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo">
+        <p>Icon Only</p>
+      </div>
     </div>
 
-    <!-- ✅ White Logo on Dark Background -->
-    <div class="logo-box dark-bg">
-      <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit White Logo (Dark Background)">
-      <p>White Logo (Dark Background)</p>
+    <hr />
+
+    <h2>Color Palette</h2>
+    <div class="color-swatch">
+      <div class="color-mint">Mint Green<br>#2A9D8F</div>
+      <div class="color-coral">Coral<br>#F76E50</div>
+      <div class="color-orange">Soft Orange<br>#F4A261</div>
+      <div class="color-charcoal">Charcoal<br>#2C2C2C</div>
+      <div class="color-white">Soft White<br>#F9F9F9</div>
     </div>
 
-    <!-- ✅ Icon Only (Teal/Coral Interlocking Rings) -->
-    <div class="logo-box">
-      <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo">
-      <p>Icon Only</p>
-    </div>
-  </div>
+    <hr />
 
-  <hr />
+    <h2>Typography</h2>
+    <p><strong>Heading:</strong> Inter Bold<br>
+       <strong>Body:</strong> Inter Regular<br>
+       <strong>UI Elements:</strong> Inter Medium</p>
 
-  <h2>Color Palette</h2>
-  <div class="color-swatch">
-    <div class="color-mint">Mint Green<br>#2A9D8F</div>
-    <div class="color-coral">Coral<br>#F76E50</div>
-    <div class="color-orange">Soft Orange<br>#F4A261</div>
-    <div class="color-charcoal">Charcoal<br>#2C2C2C</div>
-    <div class="color-white">Soft White<br>#F9F9F9</div>
-  </div>
+    <hr />
 
-  <hr />
-
-  <h2>Typography</h2>
-  <p>
-    <strong>Heading:</strong> Inter Bold<br>
-    <strong>Body:</strong> Inter Regular<br>
-    <strong>UI Elements:</strong> Inter Medium
-  </p>
-
-  <hr />
-
-  <h2>Usage Notes</h2>
-  <p>
-    Maintain clear space equal to the height of one ring around the logo.<br>
-    Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.
-  </p>
-</main>
+    <h2>Usage Notes</h2>
+    <p>Maintain clear space equal to the height of one ring around the logo.<br>
+       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.</p>
+  </main>
 
   <footer>
     <p>© 2026 SmartSplit. All rights reserved.</p>
