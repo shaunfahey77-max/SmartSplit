@@ -7,31 +7,13 @@
   <meta name="author" content="SmartSplit Team" />
   <title>SmartSplit Brand Guide – Final</title>
 
-  <!-- Local Inter Fonts -->
   <style>
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Regular.woff2') format('woff2');
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Medium.woff2') format('woff2');
-      font-weight: 500;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('fonts/Inter-Bold.woff2') format('woff2');
-      font-weight: 700;
-    }
-
     :root {
       --mint: #2A9D8F;
       --coral: #F76E50;
       --orange: #F4A261;
       --charcoal: #2C2C2C;
       --white: #F9F9F9;
-      --transition: 0.4s ease;
     }
 
     body {
@@ -66,11 +48,6 @@
       margin-bottom: 0.5em;
     }
 
-    p {
-      margin-bottom: 1em;
-    }
-
-    /* LOGO VARIANTS */
     .logo-row {
       display: flex;
       flex-wrap: wrap;
@@ -90,9 +67,7 @@
       transition: transform 0.2s ease;
     }
 
-    .logo-box:hover {
-      transform: translateY(-3px);
-    }
+    .logo-box:hover { transform: translateY(-3px); }
 
     .logo-box img {
       display: block;
@@ -100,27 +75,13 @@
       height: auto;
     }
 
-    .logo-box:first-child img {
-      max-width: 280px; /* Primary Gradient Logo */
-    }
+    .logo-box:first-child img { max-width: 280px; }
+    .logo-box.dark-bg img { max-width: 240px; }
+    .logo-box:last-child img { max-width: 180px; }
 
-    .logo-box.dark-bg img {
-      max-width: 240px; /* White Logo */
-    }
+    .dark-bg { background: #2C2C2C; }
+    .dark-bg p { color: #fff; }
 
-    .logo-box:last-child img {
-      max-width: 180px; /* Icon Only */
-    }
-
-    .dark-bg {
-      background: #2C2C2C;
-    }
-
-    .dark-bg p {
-      color: #fff;
-    }
-
-    /* COLOR PALETTE */
     .color-swatch {
       display: flex;
       flex-wrap: wrap;
@@ -154,8 +115,7 @@
 
 <body>
   <header>
-    <!-- ✅ Header logo -->
-    <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-color.png" alt="SmartSplit Logo" />
+    <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-color.png?v=3" alt="SmartSplit Logo" />
     <h1>SmartSplit Brand Guide</h1>
     <p>Official visual identity system – 2026 Edition</p>
   </header>
@@ -163,21 +123,18 @@
   <main>
     <h2>Logo Variants</h2>
     <div class="logo-row">
-      <!-- ✅ Primary Gradient Logo -->
       <div class="logo-box">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-color.png" alt="SmartSplit Primary Gradient Logo">
+        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-color.png?v=3" alt="SmartSplit Primary Gradient Logo">
         <p>Primary Gradient Logo</p>
       </div>
 
-      <!-- ✅ White Logo on Dark Background -->
       <div class="logo-box dark-bg">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-white.svg" alt="SmartSplit White Logo (Dark Background)">
+        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-white.svg?v=3" alt="SmartSplit White Logo (Dark Background)">
         <p>White Logo (Dark Background)</p>
       </div>
 
-      <!-- ✅ Icon Only -->
       <div class="logo-box">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo">
+        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-icon.svg?v=3" alt="SmartSplit Icon Logo">
         <p>Icon Only</p>
       </div>
     </div>
@@ -196,19 +153,15 @@
     <hr />
 
     <h2>Typography</h2>
-    <p>
-      <strong>Heading:</strong> Inter Bold<br>
-      <strong>Body:</strong> Inter Regular<br>
-      <strong>UI Elements:</strong> Inter Medium
-    </p>
+    <p><strong>Heading:</strong> Inter Bold<br>
+       <strong>Body:</strong> Inter Regular<br>
+       <strong>UI Elements:</strong> Inter Medium</p>
 
     <hr />
 
     <h2>Usage Notes</h2>
-    <p>
-      Maintain clear space equal to the height of one ring around the logo.<br>
-      Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.
-    </p>
+    <p>Maintain clear space equal to the height of one ring around the logo.<br>
+       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.</p>
   </main>
 
   <footer>
