@@ -5,9 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SmartSplit Brand Guide – Official Brand Identity System" />
   <meta name="author" content="SmartSplit Team" />
-  <title>SmartSplit Brand Guide – 2026 Edition</title>
+  <title>SmartSplit Brand Guide – Final</title>
 
+  <!-- Local Inter Fonts -->
   <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Medium.woff2') format('woff2');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+
     :root {
       --mint: #2A9D8F;
       --coral: #F76E50;
@@ -24,8 +41,9 @@
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background: linear-gradient(90deg, #F76E50 0%, #2A9D8F 100%);
+      background: linear-gradient(90deg, rgba(42,157,143,0.85) 0%, rgba(244,162,97,0.85) 100%);
       color: white;
       text-align: center;
       padding: 3rem 1rem;
@@ -38,7 +56,7 @@
     }
 
     main {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -51,7 +69,7 @@
     .logo-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 2.5rem;
       justify-content: center;
       margin: 2rem 0;
     }
@@ -63,11 +81,13 @@
       border-radius: 8px;
       background: #fff;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      flex: 1 1 300px;
+      flex: 1 1 320px;
       transition: transform 0.2s ease;
     }
 
-    .logo-box:hover { transform: translateY(-3px); }
+    .logo-box:hover {
+      transform: translateY(-4px);
+    }
 
     .logo-box img {
       display: block;
@@ -75,12 +95,25 @@
       height: auto;
     }
 
-    .logo-box:first-child img { max-width: 280px; }
-    .logo-box.dark-bg img { max-width: 240px; }
-    .logo-box:last-child img { max-width: 180px; }
+    .logo-box:first-child img {
+      max-width: 320px; /* Primary Gradient Logo */
+    }
 
-    .dark-bg { background: #2C2C2C; }
-    .dark-bg p { color: #fff; }
+    .logo-box.dark-bg img {
+      max-width: 300px; /* White Logo on Dark Background */
+    }
+
+    .logo-box:last-child img {
+      max-width: 180px; /* Icon Only */
+    }
+
+    .dark-bg {
+      background: #2C2C2C;
+    }
+
+    .dark-bg p {
+      color: #fff;
+    }
 
     .color-swatch {
       display: flex;
@@ -112,10 +145,9 @@
     }
   </style>
 </head>
-
 <body>
   <header>
-    <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit White Logo" />
+    <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-white.svg?v=3" alt="SmartSplit Logo" />
     <h1>SmartSplit Brand Guide</h1>
     <p>Official visual identity system – 2026 Edition</p>
   </header>
@@ -123,21 +155,25 @@
   <main>
     <h2>Logo Variants</h2>
     <div class="logo-row">
-      <div class="logo-box">
-       <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-vertical-color.png" alt="SmartSplit Primary Gradient Logo" />
 
+      <!-- ✅ Primary Gradient Logo -->
+      <div class="logo-box">
+        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-vertical-color.png?v=3" alt="SmartSplit Primary Gradient Logo" />
         <p>Primary Gradient Logo</p>
       </div>
 
+      <!-- ✅ White Logo on Dark Background -->
       <div class="logo-box dark-bg">
-        <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit White Logo (Dark Background)" />
+        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-white.svg?v=3" alt="SmartSplit White Logo" />
         <p>White Logo (Dark Background)</p>
       </div>
 
+      <!-- ✅ Icon Only -->
       <div class="logo-box">
-        <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo" />
+        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-icon.svg?v=3" alt="SmartSplit Icon Logo" />
         <p>Icon Only</p>
       </div>
+
     </div>
 
     <hr />
