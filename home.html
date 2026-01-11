@@ -13,15 +13,18 @@
       background-color: #fff;
     }
 
+    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #F9F9F9;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
     header img {
@@ -31,7 +34,7 @@
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
-      color: #999;
+      color: #666;
       font-weight: 500;
       transition: color 0.3s ease;
     }
@@ -40,43 +43,33 @@
       color: #2A9D8F;
     }
 
-   .hero {
-  position: relative;
-  background:
-    linear-gradient(
-      rgba(42, 217, 143, 0.25),
-      rgba(244, 162, 97, 0.25)
-    ),
-    url('assets/hero-consultation.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 10rem 1rem 8rem;
-  background-attachment: fixed;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      padding: 10rem 1rem 8rem;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('assets/hero-consultation.jpg') center/cover no-repeat;
+      background-attachment: fixed;
+    }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
       font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     }
 
     .hero p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
       line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     .button-group {
@@ -93,13 +86,15 @@ header {
       font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .btn:hover {
       background-color: #f15b3a;
+      transform: translateY(-2px);
     }
 
+    /* MAIN CONTENT */
     main {
       max-width: 960px;
       margin: 4rem auto;
@@ -115,6 +110,7 @@ header {
       font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      color: #2C2C2C;
     }
 
     section p {
@@ -123,6 +119,7 @@ header {
       font-size: 1rem;
     }
 
+    /* FOOTER */
     footer {
       background: #2C2C2C;
       color: #fff;
