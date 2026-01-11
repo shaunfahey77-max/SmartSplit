@@ -31,9 +31,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background: rgba(44, 44, 44, 0.2);
-      backdrop-filter: blur(6px);
-      transition: background var(--transition);
+      background: linear-gradient(90deg, rgba(42,157,143,0.9), rgba(244,162,97,0.9));
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 1000;
     }
 
@@ -53,24 +52,29 @@
       opacity: 0.7;
     }
 
+    /* HERO SECTION */
     .hero {
-      background: url('assets/hero-consultation.jpg') center/cover no-repeat,
-                  linear-gradient(90deg, rgba(42,157,143,0.6), rgba(244,162,97,0.6));
+      background: 
+        url('https://images.unsplash.com/photo-1616628188550-4d1b8a0dc2e3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat,
+        linear-gradient(90deg, rgba(42,157,143,0.6), rgba(244,162,97,0.6));
       background-blend-mode: overlay;
       color: #fff;
       text-align: center;
-      padding: 6rem 1rem 5rem;
+      padding: 8rem 1rem 6rem;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .hero p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-buttons {
@@ -94,9 +98,10 @@
       background: var(--mint);
     }
 
+    /* MID SECTIONS */
     .section {
       max-width: 960px;
-      margin: 3rem auto;
+      margin: 4rem auto;
       padding: 0 1rem;
       text-align: center;
     }
@@ -106,6 +111,7 @@
       margin-bottom: 1rem;
     }
 
+    /* FOOTER */
     footer {
       background: var(--charcoal);
       color: var(--white);
