@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SmartSplit – Simplify separation and co-parenting decisions" />
+  <title>SmartSplit – Simplify Separation</title>
+
+  <style>
+    :root {
+      --mint: #2A9D8F;
+      --coral: #F76E50;
+      --orange: #F4A261;
+      --charcoal: #2C2C2C;
+      --white: #F9F9F9;
+      --transition: 0.4s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(44, 44, 44, 0.2);
+      backdrop-filter: blur(6px);
+      transition: background var(--transition);
+      z-index: 1000;
+    }
+
+    header img {
+      max-height: 50px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: opacity var(--transition);
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .hero {
+      background: url('assets/hero-consultation.jpg') center/cover no-repeat,
+                  linear-gradient(90deg, rgba(42,157,143,0.6), rgba(244,162,97,0.6));
+      background-blend-mode: overlay;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 1rem 5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons a {
+      text-decoration: none;
+      background: var(--coral);
+      color: #fff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    .cta-buttons a:hover {
+      background: var(--mint);
+    }
+
+    .section {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: var(--charcoal);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Header -->
+  <header>
+    <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit Logo" />
+    <nav>
+      <a href="home.html" class="active">Home</a>
+      <a href="SmartSplit_BrandGuide_Final.html">Brand Guide</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Find the Support You Need</h1>
+    <p>SmartSplit helps you make confident, informed decisions about your separation or co-parenting plan.</p>
+    <div class="cta-buttons">
+      <a href="#">Find an Attorney</a>
+      <a href="#">Download Free Document</a>
+    </div>
+  </section>
+
+  <!-- Placeholder Sections -->
+  <section class="section">
+    <h2>How SmartSplit Works</h2>
+    <p>We connect you with trusted professionals and tools that simplify the legal separation process. (Placeholder content)</p>
+  </section>
+
+  <section class="section">
+    <h2>Talk to an Advisor</h2>
+    <p>Need personalized guidance? Chat with a SmartSplit advisor to discuss your options confidentially.</p>
+  </section>
+
+  <footer>
+    <p>© 2026 SmartSplit. All rights reserved.</p>
+  </footer>
+</body>
+</html>
