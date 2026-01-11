@@ -4,16 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SmartSplit Brand Guide – Official Brand Identity System" />
-  <meta name="author" content="SmartSplit Team" />
-  <title>SmartSplit Brand Guide – 2026 Edition</title>
+  <title>SmartSplit – Brand Guide & Foundation</title>
 
+  <!-- Local Inter Fonts -->
   <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Medium.woff2') format('woff2');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+
     :root {
       --mint: #2A9D8F;
       --coral: #F76E50;
       --orange: #F4A261;
       --charcoal: #2C2C2C;
       --white: #F9F9F9;
+      --transition: 0.4s ease;
     }
 
     body {
@@ -24,26 +41,66 @@
       line-height: 1.6;
     }
 
+    /* Sticky Header */
     header {
-      background: linear-gradient(90deg, rgba(244,162,97,1) 0%, rgba(42,157,143,1) 100%);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      transition: background var(--transition);
+      background: rgba(44, 44, 44, 0.1);
+      backdrop-filter: blur(6px);
+    }
+
+    header.scrolled {
+      background: linear-gradient(90deg, var(--mint) 0%, var(--coral) 100%);
     }
 
     header img {
-      max-width: 240px;
-      display: block;
-      margin: 0 auto 1rem;
+      max-height: 50px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: opacity var(--transition);
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* Hero Section Placeholder */
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem 3rem;
+      color: var(--charcoal);
+      background: linear-gradient(90deg, rgba(42,157,143,0.15) 0%, rgba(244,162,97,0.15) 100%);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .hero p {
+      color: #444;
     }
 
     main {
-      max-width: 1000px;
+      max-width: 960px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    h1, h2 {
+    h2 {
       font-weight: 700;
       margin-bottom: 0.5em;
     }
@@ -68,7 +125,7 @@
     }
 
     .logo-box:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
     .logo-box img {
@@ -78,15 +135,15 @@
     }
 
     .logo-box:first-child img {
-      max-width: 300px;
+      max-width: 260px; /* Primary Gradient Logo */
     }
 
     .logo-box.dark-bg img {
-      max-width: 280px;
+      max-width: 240px; /* White Logo on Dark Background */
     }
 
     .logo-box:last-child img {
-      max-width: 180px;
+      max-width: 160px; /* Icon Only */
     }
 
     .dark-bg {
@@ -124,49 +181,54 @@
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
+      margin-top: 4rem;
     }
   </style>
+
+  <script>
+    // Add scroll listener for sticky header background
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
 </head>
 
 <body>
+  <!-- Sticky Header -->
   <header>
-    <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-white.svg?v=6" alt="SmartSplit Logo" />
+    <img src="assets/smartsplit-horizontal-white.svg" alt="SmartSplit Logo" />
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Resources</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
     <h1>SmartSplit Brand Guide</h1>
     <p>Official visual identity system – 2026 Edition</p>
-  </header>
+  </section>
 
   <main>
     <h2>Logo Variants</h2>
     <div class="logo-row">
-
-      <!-- ✅ Primary Gradient Logo -->
       <div class="logo-box">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-vertical-color.png?v=6" alt="SmartSplit Primary Gradient Logo" />
+        <img src="assets/smartsplit-vertical-color.png" alt="SmartSplit Primary Gradient Logo" />
         <p>Primary Gradient Logo</p>
       </div>
-
-      <!-- ✅ White Logo (Dark Background) -->
       <div class="logo-box dark-bg">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-white.svg?v=6" alt="SmartSplit White Logo" />
+        <img src="assets/smartsplit-horizontal-white.svg" alt="White Logo (Dark BG)" />
         <p>White Logo (Dark Background)</p>
       </div>
-
-      <!-- ✅ Icon Only -->
       <div class="logo-box">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-icon.svg?v=6" alt="SmartSplit Icon Logo" />
+        <img src="assets/smartsplit-icon.svg" alt="SmartSplit Icon Logo" />
         <p>Icon-Only Mark</p>
-      </div>
-
-      <!-- ✅ Horizontal Logo -->
-      <div class="logo-box">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-horizontal-color.svg?v=6" alt="SmartSplit Horizontal Color Logo" />
-        <p>Horizontal Color Logo</p>
-      </div>
-
-      <!-- ✅ Logo with Tagline -->
-      <div class="logo-box">
-        <img src="https://shaunfahey77-max.github.io/SmartSplit/assets/smartsplit-with-tagline.svg?v=6" alt="SmartSplit Logo with Tagline" />
-        <p>Logo with Tagline</p>
       </div>
     </div>
 
@@ -191,10 +253,8 @@
     <hr />
 
     <h2>Usage Notes</h2>
-    <p>
-      Maintain clear space equal to the height of one ring around the logo.<br>
-      Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.
-    </p>
+    <p>Maintain clear space equal to the height of one ring around the logo.  
+       Do not alter colors or proportions. Ensure sufficient contrast on backgrounds.</p>
   </main>
 
   <footer>
