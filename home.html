@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SmartSplit | Navigate Separation with Confidence</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
   <style>
     :root {
-      --mint: #2A9D8F;
-      --coral: #F76E50;
-      --orange: #F4A261;
-      --charcoal: #2C2C2C;
-      --light: #F8F8F8;
+      --mint: #2a9d8f;
+      --coral: #f76e50;
+      --orange: #f4a261;
+      --charcoal: #2c2c2c;
+      --light: #f8f8f8;
     }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fff;
       color: var(--charcoal);
+      background-color: #fff;
       line-height: 1.6;
     }
 
@@ -32,13 +32,14 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 3rem;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
       z-index: 1000;
     }
 
     header img {
-      height: 38px;
+      height: 40px;
+      filter: brightness(0) invert(1);
     }
 
     nav a {
@@ -59,23 +60,26 @@
       background: url('assets/hero-consultation.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 16rem 2rem 12rem;
+      padding: 14rem 2rem 10rem;
+      margin-top: 4.5rem;
     }
 
+    /* dark overlay for text contrast */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.6) 100%
       );
+      z-index: 0;
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 850px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
@@ -83,10 +87,11 @@
       font-size: 3rem;
       margin-bottom: 1rem;
       font-weight: 700;
+      line-height: 1.2;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 2.5rem;
       color: #f2f2f2;
     }
@@ -175,7 +180,7 @@
       font-size: 0.95rem;
     }
 
-    /* CALL TO ACTION */
+    /* CTA */
     .cta {
       background: linear-gradient(90deg, var(--mint), var(--orange));
       color: #fff;
@@ -203,7 +208,6 @@
       background-color: var(--light);
     }
 
-    /* FOOTER */
     footer {
       background: var(--charcoal);
       color: #fff;
@@ -249,7 +253,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Navigate Divorce & Separation with Confidence</h1>
-      <p>SmartSplit connects you with the tools and experts to make informed, empowered decisions for your future.</p>
+      <p>SmartSplit connects you with tools and experts to make informed, empowered decisions for your next chapter.</p>
       <div class="button-group">
         <button class="btn">Find an Attorney</button>
         <button class="btn">Download Free Document</button>
@@ -259,31 +263,31 @@
 
   <section class="intro">
     <h2>Why Choose SmartSplit</h2>
-    <p>SmartSplit was created to help families make clear, confident decisions during difficult transitions. 
-      Whether you're separating, co-parenting, or organizing financial matters — SmartSplit gives you clarity and peace of mind.</p>
+    <p>SmartSplit was built to make separation and co-parenting less overwhelming. 
+       Our guided tools and trusted network of professionals help you move forward with clarity and care.</p>
   </section>
 
   <section class="features">
     <div class="feature">
       <img src="assets/smartsplit-icon.svg" alt="Document Icon">
-      <h3>Legal Document Templates</h3>
-      <p>Access easy-to-use templates for agreements, parenting plans, and property divisions.</p>
+      <h3>Legal Templates</h3>
+      <p>Access customizable templates for parenting, property, and financial agreements.</p>
     </div>
     <div class="feature">
       <img src="assets/smartsplit-icon.svg" alt="Attorney Icon">
-      <h3>Find a Trusted Attorney</h3>
-      <p>Get matched with verified family law professionals who understand your situation.</p>
+      <h3>Find an Attorney</h3>
+      <p>Get connected with verified family law professionals near you.</p>
     </div>
     <div class="feature">
       <img src="assets/smartsplit-icon.svg" alt="Chat Icon">
-      <h3>Chat with an Advisor</h3>
-      <p>Get confidential guidance from SmartSplit specialists who can help you take the next step.</p>
+      <h3>Talk to an Advisor</h3>
+      <p>Chat confidentially with SmartSplit advisors for expert guidance.</p>
     </div>
   </section>
 
   <section class="cta">
     <h2>Start with a Free Template</h2>
-    <p>Begin your journey with confidence — download your first document and take control of your next chapter.</p>
+    <p>Download your first document and take the next step with confidence.</p>
     <button class="btn">Get Started</button>
   </section>
 
@@ -292,4 +296,3 @@
   </footer>
 </body>
 </html>
-
