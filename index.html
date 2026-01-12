@@ -1,117 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartSplit | Find the Support You Need</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartSplit | Navigate Separation with Confidence</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
   <style>
+    :root {
+      --mint: #2a9d8f;
+      --coral: #f76e50;
+      --orange: #f4a261;
+      --charcoal: #2c2c2c;
+      --light: #f8f8f8;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      color: #2C2C2C;
+      color: var(--charcoal);
       background-color: #fff;
+      line-height: 1.6;
     }
 
+    /* HEADER */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #F9F9F9;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
+      padding: 1rem 3rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
       z-index: 1000;
     }
 
     header img {
       height: 40px;
+      filter: brightness(0) invert(1);
     }
 
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
-      color: #999;
+      color: #fff;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #2A9D8F;
+      color: var(--orange);
     }
 
+    /* HERO */
     .hero {
       position: relative;
-      background:
-        linear-gradient(
-          rgba(42, 217, 143, 0.55),
-          rgba(244, 162, 97, 0.55)
-        ),
-        url('assets/hero-consultation.jpg') center/cover no-repeat;
+      background: url('assets/hero-consultation.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 10rem 1rem 8rem;
-      background-attachment: fixed;
+      padding: 14rem 2rem 10rem;
+      margin-top: 4.5rem;
+    }
+
+    /* dark overlay for text contrast */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
       font-weight: 700;
+      line-height: 1.2;
     }
 
     .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      color: #f2f2f2;
     }
 
     .button-group {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
     }
 
     .btn {
-      background-color: #F76E50;
+      background-color: var(--coral);
       border: none;
       color: #fff;
-      padding: 0.9rem 1.6rem;
+      padding: 1rem 2rem;
       font-size: 1rem;
-      border-radius: 6px;
+      font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .btn:hover {
-      background-color: #f15b3a;
+      background-color: #e15b40;
+      transform: translateY(-2px);
     }
 
-    main {
-      max-width: 960px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 4rem;
+    /* INTRO SECTION */
+    .intro {
       text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: var(--light);
     }
 
-    section h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
+    .intro h2 {
+      font-size: 2rem;
+      color: var(--charcoal);
       margin-bottom: 1rem;
     }
 
-    section p {
+    .intro p {
+      max-width: 700px;
+      margin: 0 auto;
       color: #555;
-      line-height: 1.6;
-      font-size: 1rem;
+    }
+
+    /* FEATURES GRID */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .feature {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .feature img {
+      height: 60px;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature h3 {
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+    }
+
+    .feature p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(90deg, var(--mint), var(--orange));
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta .btn {
+      background-color: #fff;
+      color: var(--mint);
+      font-weight: 700;
+    }
+
+    .cta .btn:hover {
+      background-color: var(--light);
     }
 
     footer {
-      background: #2C2C2C;
+      background: var(--charcoal);
       color: #fff;
       text-align: center;
       padding: 2rem 1rem;
@@ -125,6 +223,19 @@
 
     footer a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -140,25 +251,45 @@
   </header>
 
   <section class="hero">
-    <h1>Find the Support You Need</h1>
-    <p>SmartSplit helps you make confident, informed decisions about your separation or co-parenting plan.</p>
-    <div class="button-group">
-      <button class="btn">Find an Attorney</button>
-      <button class="btn">Download Free Document</button>
+    <div class="hero-content">
+      <h1>Navigate Divorce & Separation with Confidence</h1>
+      <p>SmartSplit connects you with tools and experts to make informed, empowered decisions for your next chapter.</p>
+      <div class="button-group">
+        <button class="btn">Find an Attorney</button>
+        <button class="btn">Download Free Document</button>
+      </div>
     </div>
   </section>
 
-  <main>
-    <section>
-      <h2>How SmartSplit Works</h2>
-      <p>We connect you with trusted professionals and tools that simplify the legal separation process. (Placeholder content)</p>
-    </section>
+  <section class="intro">
+    <h2>Why Choose SmartSplit</h2>
+    <p>SmartSplit was built to make separation and co-parenting less overwhelming. 
+       Our guided tools and trusted network of professionals help you move forward with clarity and care.</p>
+  </section>
 
-    <section>
-      <h2>Talk to an Advisor</h2>
-      <p>Need personalized guidance? Chat with a SmartSplit advisor to discuss your options confidentially.</p>
-    </section>
-  </main>
+  <section class="features">
+    <div class="feature">
+      <img src="assets/smartsplit-icon.svg" alt="Document Icon">
+      <h3>Legal Templates</h3>
+      <p>Access customizable templates for parenting, property, and financial agreements.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/smartsplit-icon.svg" alt="Attorney Icon">
+      <h3>Find an Attorney</h3>
+      <p>Get connected with verified family law professionals near you.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/smartsplit-icon.svg" alt="Chat Icon">
+      <h3>Talk to an Advisor</h3>
+      <p>Chat confidentially with SmartSplit advisors for expert guidance.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Start with a Free Template</h2>
+    <p>Download your first document and take the next step with confidence.</p>
+    <button class="btn">Get Started</button>
+  </section>
 
   <footer>
     © 2026 SmartSplit. All rights reserved.
