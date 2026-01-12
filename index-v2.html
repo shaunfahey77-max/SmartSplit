@@ -56,25 +56,25 @@
 
     /* HERO */
     .hero {
-  position: relative;
-  background: url('assets/hero-consultation.jpg') center center / cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 12rem 2rem 10rem;
-  margin-top: 4.5rem;
-  min-height: 85vh; /* ensure the full hero image is visible */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+      position: relative;
+      background: url('assets/hero-consultation.jpg') center 25% / cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 12rem 2rem 10rem;
+      margin-top: 4.5rem;
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-    /* dark overlay for text contrast */
-     content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* subtle dark overlay for text contrast */
-  z-index: 0;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 0;
+    }
 
     .hero-content {
       position: relative;
@@ -230,8 +230,12 @@
         flex-direction: column;
         padding: 1rem;
       }
+      .hero {
+        padding: 10rem 1.5rem 8rem;
+        background-position: center 30%;
+      }
       .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
       }
       .hero p {
         font-size: 1rem;
