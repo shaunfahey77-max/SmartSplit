@@ -1,202 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SmartSplit Brand Guide | FINAL (2026)</title>
+  <title>SmartSplit Brand Guide (FINAL 2026)</title>
 
-  <!--
-    SMARTSPLIT BRAND GUIDE (LOCKED) — FINAL (2026)
-    Single-source-of-truth file.
-    All images referenced ONLY from /assets/brand/
-  -->
+  <!-- Brand Guide must reference ONLY /assets/brand/ and the 3-ring mark. -->
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="icon" href="./assets/brand/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
 
   <style>
     :root{
-      --mint:#2a9d8f;
-      --coral:#f76e50;
-      --orange:#f4a261;
-      --charcoal:#2c2c2c;
-      --soft:#f6f7f9;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --border:rgba(0,0,0,0.08);
-      --radius:14px;
-      --container:980px;
+      --mint:#2A9D8F;
+      --coral:#F76E50;
+      --charcoal:#2C2C2C;
+      --soft:#F6F7F9;
+      --text:#111827;
+      --muted:#6B7280;
+      --radius:16px;
+      --container:1040px;
+      --border: 1px solid rgba(17,24,39,.10);
     }
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color:var(--text);
       background:#fff;
-      line-height:1.6;
+      line-height:1.5;
     }
     a{ color:inherit; text-decoration:none; }
-
-    header{
+    .topbar{
+      background:linear-gradient(90deg,var(--coral),var(--mint));
+      color:#fff;
+      padding:18px 0;
       position:sticky;
       top:0;
-      z-index:5;
-      padding:14px 0;
-      color:#fff;
-      background: linear-gradient(90deg, rgba(247,110,80,0.92), rgba(42,157,143,0.92));
-      border-bottom:1px solid rgba(255,255,255,0.22);
+      z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.18);
     }
-    .wrap{ max-width:var(--container); margin:0 auto; padding:0 20px; }
-    .top{
+    .container{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 22px;
+    }
+    .topbar-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-    }
-    .brand img{ height:40px; width:auto; display:block; }
-    .pill{
-      padding:10px 12px;
-      border-radius:12px;
-      background:rgba(0,0,0,0.20);
-      border:1px solid rgba(255,255,255,0.25);
-      font-weight:800;
-    }
-
-    main{ padding:34px 0 60px; }
-    h1{ margin:0 0 6px; font-size:1.9rem; letter-spacing:-0.02em; }
-    .muted{ color:var(--muted); margin:0 0 18px; }
-
-    .card{
-      background:var(--soft);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:18px;
-      margin:18px 0;
-    }
-    .grid2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
       gap:14px;
     }
-    .logoBox{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:16px;
+    .logo{
       display:flex;
       align-items:center;
-      justify-content:center;
-      min-height:110px;
-    }
-    .logoBox.dark{
-      background:#2c2c2c;
-    }
-    .logoBox img{
-      max-width:100%;
-      height:auto;
-    }
-
-    .swatches{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
       gap:12px;
     }
-    .sw{
-      border-radius:12px;
-      border:1px solid var(--border);
-      padding:12px;
-      text-align:center;
+    .logo img{ height:34px; width:auto; display:block; }
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.18);
       font-weight:800;
-      color:#fff;
-    }
-    .sw small{ display:block; font-weight:600; opacity:.95; }
-    .sw.white{ background:#fff; color:#111; }
-    .sw.charcoal{ grid-column:1 / -1; }
-
-    code{
-      background:rgba(0,0,0,0.04);
-      padding:2px 6px;
-      border-radius:6px;
+      white-space:nowrap;
     }
 
-    @media (max-width:760px){
-      .grid2{ grid-template-columns:1fr; }
-      .swatches{ grid-template-columns:1fr 1fr; }
-      .sw.charcoal{ grid-column:auto; }
+    main{ padding:34px 0 70px; }
+    h1{ font-size:30px; margin:0 0 8px; letter-spacing:-.02em; }
+    .sub{ color:rgba(17,24,39,.75); margin:0 0 26px; }
+
+    .panel{
+      border:var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 10px 24px rgba(0,0,0,.05);
+      margin-bottom:18px;
+    }
+    .panel-h{
+      padding:16px 18px;
+      border-bottom:var(--border);
+      background:linear-gradient(180deg, rgba(0,0,0,.02), transparent);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .panel-h h2{ margin:0; font-size:16px; }
+    .panel-b{ padding:18px; }
+
+    .variants{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .tile{
+      border:var(--border);
+      border-radius:14px;
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:120px;
+      justify-content:center;
+      align-items:center;
+      background:#fff;
+    }
+    .tile.dark{
+      background:#1f1f1f;
+      border-color:rgba(255,255,255,.08);
+    }
+    .tile small{ color:var(--muted); }
+    .tile.dark small{ color:rgba(255,255,255,.75); }
+    .tile img{ max-height:44px; width:auto; }
+
+    .palette{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:12px;
+    }
+    .swatch{
+      border:var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .swatch .c{ height:56px; }
+    .swatch .l{
+      padding:10px 12px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+    code{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; color:#111; }
+
+    .rules{
+      margin:0;
+      padding-left:18px;
+      color:rgba(17,24,39,.85);
+    }
+    .rules li{ margin:8px 0; }
+
+    footer{
+      border-top:var(--border);
+      background:#111;
+      color:#bbb;
+      padding:18px 0;
+      font-size:12px;
+      text-align:center;
+    }
+
+    @media (max-width: 820px){
+      .variants{ grid-template-columns:1fr; }
+      .palette{ grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="wrap top">
-      <a class="brand" href="./index.html" aria-label="Back to site">
-        <img
-          src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png"
-          alt="SmartSplit"
-        />
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="logo" href="./index.html" aria-label="Back to site">
+        <img src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png" alt="SmartSplit">
       </a>
-      <div class="pill">Brand Guide · FINAL (2026)</div>
+      <a class="pill" href="./index.html">Back to site</a>
     </div>
-  </header>
+  </div>
 
-  <main class="wrap">
-    <h1>SmartSplit Brand Guide</h1>
-    <p class="muted">Locked system. Use only assets from <code>/assets/brand/</code>.</p>
+  <main>
+    <div class="container">
+      <h1>SmartSplit Brand Guide</h1>
+      <p class="sub"><strong>Status:</strong> FINAL (2026). Locked to the 3‑ring mark. Do not recolor or restyle the logo via CSS.</p>
 
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Logo Variants</h2>
-      <div class="grid2">
-        <div class="logoBox">
-          <img src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png" alt="Primary logo">
+      <section class="panel">
+        <div class="panel-h"><h2>Logo variants</h2></div>
+        <div class="panel-b">
+          <div class="variants">
+            <div class="tile">
+              <img src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png" alt="Primary logo">
+              <small>Primary (light background)</small>
+            </div>
+            <div class="tile dark">
+              <img src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png" alt="White-on-dark logo">
+              <small>White-on-dark (dark/gradient header)</small>
+            </div>
+            <div class="tile">
+              <img src="./assets/brand/icons/smartsplit-icon-3rings-512.png" alt="Icon mark">
+              <small>Icon mark</small>
+            </div>
+            <div class="tile">
+              <img src="./assets/brand/favicon/favicon-192.png" alt="Favicon">
+              <small>Favicon</small>
+            </div>
+          </div>
         </div>
-        <div class="logoBox dark">
-          <img src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png" alt="White on dark logo">
+      </section>
+
+      <section class="panel">
+        <div class="panel-h"><h2>Color palette</h2></div>
+        <div class="panel-b">
+          <div class="palette">
+            <div class="swatch">
+              <div class="c" style="background:#F76E50"></div>
+              <div class="l"><span>Coral</span><code>#F76E50</code></div>
+            </div>
+            <div class="swatch">
+              <div class="c" style="background:#2A9D8F"></div>
+              <div class="l"><span>Mint</span><code>#2A9D8F</code></div>
+            </div>
+            <div class="swatch">
+              <div class="c" style="background:#2C2C2C"></div>
+              <div class="l"><span>Charcoal</span><code>#2C2C2C</code></div>
+            </div>
+            <div class="swatch">
+              <div class="c" style="background:#F6F7F9"></div>
+              <div class="l"><span>Soft</span><code>#F6F7F9</code></div>
+            </div>
+            <div class="swatch">
+              <div class="c" style="background:#111827"></div>
+              <div class="l"><span>Text</span><code>#111827</code></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <p class="muted" style="margin:12px 0 0;">
-        Rule: no recolors, no shadows, no CSS filters.
-      </p>
-    </div>
+      </section>
 
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Icon</h2>
-      <div class="logoBox">
-        <img src="./assets/brand/icons/smartsplit-icon-3rings-512.png" alt="SmartSplit icon">
-      </div>
-    </div>
+      <section class="panel">
+        <div class="panel-h"><h2>Typography</h2></div>
+        <div class="panel-b">
+          <p style="margin:0 0 8px;"><strong>Primary typeface:</strong> Inter</p>
+          <p style="margin:0; color:var(--muted);">Use bold weights for headings and regular/medium for body copy.</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Color Palette</h2>
-      <div class="swatches">
-        <div class="sw" style="background:var(--coral);">Coral <small>#F76E50</small></div>
-        <div class="sw" style="background:var(--orange); color:#111;">Orange <small>#F4A261</small></div>
-        <div class="sw" style="background:var(--mint);">Mint <small>#2A9D8F</small></div>
-        <div class="sw white">White <small>#FFFFFF</small></div>
-        <div class="sw charcoal" style="background:var(--charcoal);">Charcoal <small>#2C2C2C</small></div>
-      </div>
-    </div>
+      <section class="panel">
+        <div class="panel-h"><h2>Usage guidelines (non‑negotiable)</h2></div>
+        <div class="panel-b">
+          <ul class="rules">
+            <li>Use only assets from <code>/assets/brand/</code>.</li>
+            <li>Do not recolor, filter, shadow, or distort logos via CSS.</li>
+            <li>Do not introduce alternate marks or “gradient” variants.</li>
+            <li>Maintain clear space around the mark (at least the height of one ring).</li>
+            <li>Use white-on-dark logo on dark backgrounds or gradients.</li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Typography</h2>
-      <p style="margin:0;"><strong>Headings:</strong> Inter 800</p>
-      <p style="margin:0;"><strong>Subhead:</strong> Inter 600</p>
-      <p style="margin:0;"><strong>Body:</strong> Inter 400</p>
     </div>
-
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Usage Rules (Non-Negotiable)</h2>
-      <ul style="margin:0; padding-left:18px;">
-        <li>Use only files in <code>/assets/brand/</code></li>
-        <li>No recolor, filter, drop-shadow, stroke, or distortion via CSS</li>
-        <li>Use white-on-dark logo on gradients / dark backgrounds</li>
-        <li>Maintain clear space around logo equal to ~1 ring height</li>
-      </ul>
-    </div>
-
-    <p class="muted" style="margin-top:22px;">© 2026 SmartSplit · Brand System Final</p>
   </main>
+
+  <footer>© 2026 SmartSplit. All rights reserved.</footer>
+
 </body>
 </html>
