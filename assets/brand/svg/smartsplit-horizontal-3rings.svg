@@ -1,0 +1,17 @@
+<svg width="260" height="56" viewBox="0 0 260 56" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mintGrad" x1="0" y1="0" x2="0" y2="56">
+      <stop stop-color="#2A9D8F"/>
+      <stop offset="1" stop-color="#1B7A6D"/>
+    </linearGradient>
+    <linearGradient id="coralGrad" x1="0" y1="0" x2="0" y2="56">
+      <stop stop-color="#F4A261"/>
+      <stop offset="1" stop-color="#F76E50"/>
+    </linearGradient>
+  </defs>
+  <circle cx="28" cy="28" r="12" fill="none" stroke="url(#mintGrad)" stroke-width="6"/>
+  <circle cx="40" cy="28" r="12" fill="none" stroke="url(#coralGrad)" stroke-width="6"/>
+  <circle cx="34" cy="28" r="12" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+  <text x="66" y="34" font-family="Inter, sans-serif" font-size="26" font-weight="700" fill="#2C2C2C" letter-spacing="-1px">Smart</text>
+  <text x="142" y="34" font-family="Inter, sans-serif" font-size="26" font-weight="700" fill="#2A9D8F" letter-spacing="-1px">Split</text>
+</svg>
