@@ -6,18 +6,30 @@
   <title>SmartSplit | Navigate Separation with Confidence</title>
 
   <!-- =========================================================
-    SMARTSPLIT BRAND SYSTEM (LOCKED)
+    SMARTSPLIT BRAND SYSTEM (LOCKED) — FINAL (2026)
     ---------------------------------------------------------
+    SOURCE OF TRUTH: /assets/brand/
+
+    RULES
     • All logos, icons, favicons MUST use the 3-ring mark
-    • Do NOT recolor, filter, shadow, or manipulate via CSS
-    • Do NOT introduce alternate logo styles
+    • DO NOT recolor, filter, shadow, or manipulate logos via CSS
+    • DO NOT introduce alternate logo styles or new exports
     • Reuse assets only from /assets/brand/
-    • Status: FINAL (2026)
+    • If something looks blurry: use the SVG versions first
+
+    STRUCTURE (expected)
+    /assets/brand/
+      /logos/   (PNG exports)
+      /icons/   (PNG exports)
+      /favicon/ (ico + png sizes)
+      /svg/     (primary sharp assets)
+      README.md (locked notes)
   ========================================================== -->
 
-  <!-- Favicons -->
+  <!-- Favicons (from /assets/brand/favicon/) -->
   <link rel="icon" href="./assets/brand/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/brand/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/brand/favicon/favicon-48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/brand/favicon/favicon-180.png">
 
   <!-- Fonts -->
@@ -27,25 +39,32 @@
     :root{
       --mint:#2a9d8f;
       --coral:#f76e50;
-      --charcoal:#2c2c2c;
-      --bg:#ffffff;
-      --soft:#f6f7f9;
+      --orange:#f4a261;
       --text:#1f2937;
       --muted:#6b7280;
+      --bg:#ffffff;
+      --soft:#f6f7f9;
+      --border:rgba(0,0,0,0.08);
+
       --radius:14px;
+      --shadow:0 12px 28px rgba(0,0,0,0.08);
+      --shadow-soft:0 10px 22px rgba(0,0,0,0.06);
+
       --container:1120px;
       --header-h:76px;
     }
 
     *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
-      font-family:Inter, system-ui, sans-serif;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:var(--bg);
       color:var(--text);
+      line-height:1.6;
     }
-    img{ display:block; max-width:100%; }
     a{ color:inherit; text-decoration:none; }
+    img{ display:block; max-width:100%; }
 
     .container{
       max-width:var(--container);
@@ -59,227 +78,581 @@
       top:0;
       z-index:1000;
       height:var(--header-h);
-      background:linear-gradient(90deg,var(--coral),var(--mint));
       display:flex;
       align-items:center;
+
+      background: linear-gradient(90deg, rgba(247,110,80,0.92), rgba(42,157,143,0.92));
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.22);
     }
 
     .header-inner{
+      width:100%;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
-      width:100%;
+      gap:18px;
     }
 
     .brand{
       display:flex;
       align-items:center;
+      gap:12px;
+      min-width: 180px;
     }
 
-    /* CRITICAL: no cropping, no scaling hacks */
+    /* CRITICAL: never crop the logo */
     .brand-logo{
       height:36px;
       width:auto;
+      max-width: 240px;
+      object-fit: contain;
     }
 
     nav{
       display:flex;
+      align-items:center;
       gap:22px;
+      flex:1;
+      justify-content:center;
     }
 
     nav a{
       color:#fff;
       font-weight:500;
-      opacity:.9;
+      font-size:0.95rem;
+      opacity:0.92;
+      padding:8px 10px;
+      border-radius:10px;
+      transition:opacity .2s ease, background .2s ease;
+    }
+    nav a:hover{
+      opacity:1;
+      background: rgba(255,255,255,0.14);
+    }
+
+    .header-cta{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      min-width: 180px;
+      gap:10px;
     }
 
     .btn{
-      padding:12px 16px;
-      border-radius:12px;
+      border:0;
+      cursor:pointer;
       font-weight:700;
-      background:rgba(0,0,0,.25);
+      border-radius:12px;
+      padding:12px 16px;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
       color:#fff;
+      background: rgba(0,0,0,0.22);
+      border:1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+    }
+    .btn-primary:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 22px rgba(0,0,0,0.22);
+      background: rgba(0,0,0,0.28);
+    }
+
+    .btn-accent{
+      background: var(--coral);
+      color:#fff;
+      box-shadow: 0 12px 22px rgba(247,110,80,0.28);
+    }
+    .btn-accent:hover{
+      transform: translateY(-1px);
+      background: #e15b40;
+      box-shadow: 0 16px 26px rgba(247,110,80,0.34);
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,0.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.22);
+    }
+    .btn-ghost:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.16);
     }
 
     /* ================= HERO ================= */
     .hero{
-      padding:56px 0 32px;
+      position:relative;
       background:
-        radial-gradient(800px 300px at 20% 0%, rgba(42,157,143,.12), transparent),
-        radial-gradient(800px 300px at 80% 0%, rgba(247,110,80,.14), transparent);
+        radial-gradient(900px 380px at 20% 10%, rgba(42,157,143,0.10), transparent 65%),
+        radial-gradient(900px 380px at 80% 0%, rgba(247,110,80,0.12), transparent 60%),
+        linear-gradient(#ffffff, #ffffff);
+      padding: 34px 0 10px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:36px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
       align-items:center;
+      padding: 26px 0 10px;
     }
 
-    h1{
-      font-size:clamp(2.2rem,4vw,3rem);
-      margin:0 0 14px;
+    .hero h1{
+      margin:0 0 12px;
+      font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+      line-height:1.12;
+      letter-spacing:-0.02em;
     }
 
     .hero p{
+      margin:0 0 22px;
       color:var(--muted);
-      max-width:48ch;
+      font-size:1.06rem;
+      max-width: 52ch;
     }
 
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+    }
+
+    /* Hero image: fixed container + safe crop */
     .hero-visual{
-      border-radius:var(--radius);
+      border-radius: var(--radius);
       overflow:hidden;
-      background:#e5e7eb;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      background: #e5e7eb;
+      min-height: 360px;
+      aspect-ratio: 16 / 10;
+      position:relative;
     }
 
     .hero-visual img{
       width:100%;
       height:100%;
       object-fit:cover;
+      object-position: center 35%; /* keeps faces higher, less “cut off” */
     }
 
-    /* ================= CARDS ================= */
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.10), rgba(0,0,0,0.06));
+      pointer-events:none;
+    }
+
+    .hero-quote{
+      margin: 18px auto 0;
+      padding: 14px 18px;
+      max-width: 980px;
+      text-align:center;
+      color: rgba(31,41,55,0.75);
+      font-style: italic;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      background: linear-gradient(90deg, rgba(0,0,0,0.02), rgba(0,0,0,0.00), rgba(0,0,0,0.02));
+    }
+
+    /* ================= SECTIONS ================= */
     .section{
-      padding:64px 0;
+      padding: 64px 0;
     }
-
     .section.soft{
-      background:var(--soft);
+      background: var(--soft);
     }
 
+    .section h2{
+      margin:0 0 10px;
+      font-size: 1.8rem;
+      letter-spacing:-0.01em;
+    }
+
+    .section .subhead{
+      margin:0;
+      color:var(--muted);
+      max-width: 70ch;
+    }
+
+    /* WHY CARDS */
     .cards{
+      margin-top: 28px;
       display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
-      margin-top:32px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .card{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 210px;
     }
 
-    .card-icon{
-      width:44px;
-      height:44px;
-      margin-bottom:10px;
+    .card-topbar{
+      height: 10px;
+      background: linear-gradient(90deg, var(--mint), var(--orange));
     }
 
-    .card-icon img{
-      width:100%;
+    .card-body{
+      padding: 18px 16px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
       height:100%;
     }
 
-    footer{
-      background:#1f1f1f;
-      color:#ccc;
-      text-align:center;
-      padding:24px;
+    /* Icon: fixed box + contain so nothing gets clipped */
+    .card-icon{
+      height: 44px;
+      width: 44px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(42,157,143,0.08);
+      border: 1px solid rgba(42,157,143,0.14);
+      overflow:hidden;
     }
 
-    @media (max-width:900px){
-      .hero-grid{ grid-template-columns:1fr; }
-      .cards{ grid-template-columns:1fr 1fr; }
+    .card-icon img{
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
     }
-    @media (max-width:600px){
-      .cards{ grid-template-columns:1fr; }
-      nav{ display:none; }
+
+    .card h3{
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* HOW IT WORKS */
+    .how-grid{
+      margin-top: 28px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step{
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 16px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+    }
+
+    .step-badge{
+      flex:0 0 auto;
+      height: 40px;
+      width: 40px;
+      border-radius: 12px;
+      background: rgba(247,110,80,0.10);
+      border: 1px solid rgba(247,110,80,0.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color: #c64b35;
+    }
+
+    .step h3{
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+    .step p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* CTA BAND */
+    .cta-band{
+      padding: 62px 0;
+      color:#fff;
+      background: linear-gradient(90deg, rgba(42,157,143,0.92), rgba(244,162,97,0.92));
+    }
+
+    .cta-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 18px;
+      flex-wrap:wrap;
+    }
+
+    .cta-inner h2{
+      margin:0;
+      font-size: 1.8rem;
+    }
+    .cta-inner p{
+      margin: 6px 0 0;
+      color: rgba(255,255,255,0.90);
+      max-width: 70ch;
+    }
+
+    .cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn-light{
+      background:#fff;
+      color: var(--mint);
+      border: 1px solid rgba(255,255,255,0.80);
+      box-shadow: 0 14px 24px rgba(0,0,0,0.14);
+    }
+    .btn-light:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.20);
+      background: rgba(255,255,255,0.92);
+    }
+
+    footer{
+      background: #1f1f1f;
+      color: rgba(255,255,255,0.82);
+      padding: 24px 0;
+      text-align:center;
+      font-size: 0.92rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px){
+      nav{ gap:14px; justify-content:flex-end; }
+      .cards{ grid-template-columns: repeat(2, 1fr); }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-visual{ min-height: 320px; }
+      .header-cta, .brand { min-width: unset; }
+    }
+
+    @media (max-width: 640px){
+      header{ height:auto; padding: 10px 0; }
+      .header-inner{ flex-direction:column; align-items:stretch; }
+      nav{ justify-content:center; flex-wrap:wrap; }
+      .header-cta{ justify-content:center; }
+
+      .hero{ padding-top: 10px; }
+      .hero-grid{ gap:18px; padding-top: 10px; }
+
+      .how-grid{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+
+      .hero-quote{ margin-top: 12px; font-size: 0.95rem; }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <div class="container header-inner">
 
-<header>
-  <div class="container header-inner">
-    <a class="brand" href="./index.html">
-      <!-- PRIMARY LOGO: 3-RING HORIZONTAL -->
-      <img
-        class="brand-logo"
-        src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png"
-        srcset="
-          ./assets/brand/logos/smartsplit-horizontal-3rings-800.png 800w,
-          ./assets/brand/logos/smartsplit-horizontal-3rings-1200.png 1200w,
-          ./assets/brand/logos/smartsplit-horizontal-3rings-2000.png 2000w
-        "
-        sizes="160px"
-        alt="SmartSplit"
-      />
-    </a>
+      <a class="brand" href="./index.html" aria-label="SmartSplit Home">
+        <!-- Use SVG first for crispness -->
+        <img
+          class="brand-logo"
+          src="./assets/brand/svg/smartsplit-horizontal-3rings-wrapper.svg"
+          alt="SmartSplit"
+          decoding="async"
+          onerror="this.onerror=null; this.src='./assets/brand/logos/smartsplit-horizontal-3rings-1200.png';"
+        >
+      </a>
 
-    <nav>
-      <a href="#templates">Templates</a>
-      <a href="#how">How It Works</a>
-      <a href="#attorneys">Attorneys</a>
-    </nav>
+      <nav aria-label="Primary navigation">
+        <a href="#templates">Templates</a>
+        <a href="#how">How It Works</a>
+        <a href="#attorneys">Find Attorneys</a>
+        <a href="./brand-guide.html">Brand Guide</a>
+      </nav>
 
-    <a class="btn" href="#start">Get Started</a>
-  </div>
-</header>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="#get-started">Get Started</a>
+      </div>
 
-<main>
-
-<section class="hero" id="start">
-  <div class="container hero-grid">
-    <div>
-      <h1>Navigate Divorce<br>with Confidence</h1>
-      <p>SmartSplit gives you structure, clarity, and tools to move forward—without chaos.</p>
     </div>
+  </header>
 
-    <div class="hero-visual">
-      <img src="./assets/images/hero-consultation.jpg" alt="Consultation">
-    </div>
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="get-started">
+      <div class="container hero-grid">
+        <div>
+          <h1>Navigate Divorce<br>with Confidence</h1>
+          <p>Find clarity and fair solutions with SmartSplit’s guided tools and trusted professional network.</p>
 
-<section class="section soft" id="templates">
-  <div class="container">
-    <h2>Why SmartSplit?</h2>
-
-    <div class="cards">
-      <!-- SINGLE ICON SYSTEM: 3-RING ICON -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#templates">Start Free</a>
+            <a class="btn btn-ghost" href="#how">How it Works</a>
+          </div>
         </div>
-        <h3>Trusted Guidance</h3>
-        <p>Clear steps, no overwhelm.</p>
+
+        <div class="hero-visual" aria-label="Consultation photo">
+          <img src="./assets/images/hero-consultation.jpg" alt="A consultation setting" loading="eager" decoding="async">
+        </div>
       </div>
 
-      <div class="card">
-        <div class="card-icon">
-          <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
-        </div>
-        <h3>Legal Templates</h3>
-        <p>Ready-to-use documents.</p>
+      <div class="hero-quote">
+        “Life can be complicated. Splitting doesn’t have to be.”
       </div>
+    </section>
 
-      <div class="card">
-        <div class="card-icon">
-          <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
+    <!-- WHY -->
+    <section class="section soft" id="templates">
+      <div class="container">
+        <h2>Why SmartSplit?</h2>
+        <p class="subhead">
+          SmartSplit helps you move forward with clarity—using practical templates, guided steps, and access to professionals when you need them.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-topbar"></div>
+            <div class="card-body">
+              <div class="card-icon">
+                <img
+                  src="./assets/brand/svg/smartsplit-icon-3rings-wrapper.svg"
+                  alt=""
+                  onerror="this.onerror=null; this.src='./assets/brand/icons/smartsplit-icon-3rings-256.png';"
+                >
+              </div>
+              <h3>Find Trusted Attorneys</h3>
+              <p>Connect with experienced family law professionals to guide you through the process.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-topbar"></div>
+            <div class="card-body">
+              <div class="card-icon">
+                <img
+                  src="./assets/brand/svg/smartsplit-icon-3rings-wrapper.svg"
+                  alt=""
+                  onerror="this.onerror=null; this.src='./assets/brand/icons/smartsplit-icon-3rings-256.png';"
+                >
+              </div>
+              <h3>Document Templates</h3>
+              <p>Access ready-to-use templates for custody, property, and financial agreements.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-topbar"></div>
+            <div class="card-body">
+              <div class="card-icon">
+                <img
+                  src="./assets/brand/svg/smartsplit-icon-3rings-wrapper.svg"
+                  alt=""
+                  onerror="this.onerror=null; this.src='./assets/brand/icons/smartsplit-icon-3rings-256.png';"
+                >
+              </div>
+              <h3>Personalized Guidance</h3>
+              <p>Get structured, step-by-step support tailored to your unique situation.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-topbar"></div>
+            <div class="card-body">
+              <div class="card-icon">
+                <img
+                  src="./assets/brand/svg/smartsplit-icon-3rings-wrapper.svg"
+                  alt=""
+                  onerror="this.onerror=null; this.src='./assets/brand/icons/smartsplit-icon-3rings-256.png';"
+                >
+              </div>
+              <h3>Smart, Fair Splitting</h3>
+              <p>Use tools that help you divide assets and costs fairly and transparently.</p>
+            </div>
+          </article>
         </div>
-        <h3>Fair Splitting</h3>
-        <p>Transparency first.</p>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="card-icon">
-          <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <h2 style="text-align:center;">How It Works</h2>
+        <p class="subhead" style="text-align:center; margin:0 auto;">
+          A simple path forward—start free, get support when needed, and stay organized throughout.
+        </p>
+
+        <div class="how-grid">
+          <div class="step">
+            <div class="step-badge">1</div>
+            <div>
+              <h3>Start with a Free Template</h3>
+              <p>Begin with a downloadable template designed for real-world separation and custody planning.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-badge">2</div>
+            <div>
+              <h3>Consult Trusted Advisors</h3>
+              <p>When you need help, connect with professionals and get clear next steps—without the overwhelm.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-badge">3</div>
+            <div>
+              <h3>Split Fairly, Stress Less</h3>
+              <p>Use SmartSplit’s tools to keep decisions organized, transparent, and moving forward.</p>
+            </div>
+          </div>
         </div>
-        <h3>Professional Network</h3>
-        <p>Help when you need it.</p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-</main>
+    <!-- PLACEHOLDERS -->
+    <section class="section soft" id="attorneys">
+      <div class="container">
+        <h2>Find Attorneys</h2>
+        <p class="subhead">Wire this to your directory or consult request flow in v2.</p>
+      </div>
+    </section>
 
-<footer>
-  © 2026 SmartSplit. All rights reserved.
-</footer>
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2>Start Free. Move Forward with Clarity.</h2>
+          <p>Download a template, follow guided steps, and get support when you need it—without the chaos.</p>
+        </div>
 
+        <div class="cta-actions">
+          <a class="btn btn-light" href="#templates">Get a Free Template</a>
+          <a class="btn btn-primary" href="./brand-guide.html">View Brand Guide</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SmartSplit. All rights reserved.
+  </footer>
 </body>
 </html>
