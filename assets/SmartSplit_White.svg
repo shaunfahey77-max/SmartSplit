@@ -1,7 +1,0 @@
-<svg width="260" height="56" viewBox="0 0 260 56" xmlns="http://www.w3.org/2000/svg">
-  <!-- Rings -->
-  <circle cx="28" cy="28" r="12" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.9"></circle>
-  <circle cx="40" cy="28" r="12" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.9"></circle>
-  <!-- Wordmark -->
-  <text x="66" y="34" font-family="Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">SmartSplit</text>
-</svg>
