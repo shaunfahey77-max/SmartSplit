@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartSplit Brand Guide | FINAL (2026)</title>
+
+  <!--
+    SMARTSPLIT BRAND GUIDE (LOCKED) — FINAL (2026)
+    Single-source-of-truth file.
+    All images referenced ONLY from /assets/brand/
+  -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+
+  <style>
+    :root{
+      --mint:#2a9d8f;
+      --coral:#f76e50;
+      --orange:#f4a261;
+      --charcoal:#2c2c2c;
+      --soft:#f6f7f9;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:rgba(0,0,0,0.08);
+      --radius:14px;
+      --container:980px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{ color:inherit; text-decoration:none; }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:5;
+      padding:14px 0;
+      color:#fff;
+      background: linear-gradient(90deg, rgba(247,110,80,0.92), rgba(42,157,143,0.92));
+      border-bottom:1px solid rgba(255,255,255,0.22);
+    }
+    .wrap{ max-width:var(--container); margin:0 auto; padding:0 20px; }
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+    }
+    .brand img{ height:40px; width:auto; display:block; }
+    .pill{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(0,0,0,0.20);
+      border:1px solid rgba(255,255,255,0.25);
+      font-weight:800;
+    }
+
+    main{ padding:34px 0 60px; }
+    h1{ margin:0 0 6px; font-size:1.9rem; letter-spacing:-0.02em; }
+    .muted{ color:var(--muted); margin:0 0 18px; }
+
+    .card{
+      background:var(--soft);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      margin:18px 0;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .logoBox{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:110px;
+    }
+    .logoBox.dark{
+      background:#2c2c2c;
+    }
+    .logoBox img{
+      max-width:100%;
+      height:auto;
+    }
+
+    .swatches{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+    .sw{
+      border-radius:12px;
+      border:1px solid var(--border);
+      padding:12px;
+      text-align:center;
+      font-weight:800;
+      color:#fff;
+    }
+    .sw small{ display:block; font-weight:600; opacity:.95; }
+    .sw.white{ background:#fff; color:#111; }
+    .sw.charcoal{ grid-column:1 / -1; }
+
+    code{
+      background:rgba(0,0,0,0.04);
+      padding:2px 6px;
+      border-radius:6px;
+    }
+
+    @media (max-width:760px){
+      .grid2{ grid-template-columns:1fr; }
+      .swatches{ grid-template-columns:1fr 1fr; }
+      .sw.charcoal{ grid-column:auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap top">
+      <a class="brand" href="./index.html" aria-label="Back to site">
+        <img
+          src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png"
+          alt="SmartSplit"
+        />
+      </a>
+      <div class="pill">Brand Guide · FINAL (2026)</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>SmartSplit Brand Guide</h1>
+    <p class="muted">Locked system. Use only assets from <code>/assets/brand/</code>.</p>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;">Logo Variants</h2>
+      <div class="grid2">
+        <div class="logoBox">
+          <img src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png" alt="Primary logo">
+        </div>
+        <div class="logoBox dark">
+          <img src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png" alt="White on dark logo">
+        </div>
+      </div>
+      <p class="muted" style="margin:12px 0 0;">
+        Rule: no recolors, no shadows, no CSS filters.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;">Icon</h2>
+      <div class="logoBox">
+        <img src="./assets/brand/icons/smartsplit-icon-3rings-512.png" alt="SmartSplit icon">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;">Color Palette</h2>
+      <div class="swatches">
+        <div class="sw" style="background:var(--coral);">Coral <small>#F76E50</small></div>
+        <div class="sw" style="background:var(--orange); color:#111;">Orange <small>#F4A261</small></div>
+        <div class="sw" style="background:var(--mint);">Mint <small>#2A9D8F</small></div>
+        <div class="sw white">White <small>#FFFFFF</small></div>
+        <div class="sw charcoal" style="background:var(--charcoal);">Charcoal <small>#2C2C2C</small></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;">Typography</h2>
+      <p style="margin:0;"><strong>Headings:</strong> Inter 800</p>
+      <p style="margin:0;"><strong>Subhead:</strong> Inter 600</p>
+      <p style="margin:0;"><strong>Body:</strong> Inter 400</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;">Usage Rules (Non-Negotiable)</h2>
+      <ul style="margin:0; padding-left:18px;">
+        <li>Use only files in <code>/assets/brand/</code></li>
+        <li>No recolor, filter, drop-shadow, stroke, or distortion via CSS</li>
+        <li>Use white-on-dark logo on gradients / dark backgrounds</li>
+        <li>Maintain clear space around logo equal to ~1 ring height</li>
+      </ul>
+    </div>
+
+    <p class="muted" style="margin-top:22px;">© 2026 SmartSplit · Brand System Final</p>
+  </main>
+</body>
+</html>
