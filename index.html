@@ -1,173 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SmartSplit | Navigate Divorce with Confidence</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
 <style>
-:root {
+:root{
   --mint:#2a9d8f;
   --coral:#f76e50;
-  --dark:#1f2937;
+  --dark:#111827;
+  --text:#1f2937;
+  --muted:#6b7280;
   --bg:#ffffff;
   --soft:#f5f7f9;
   --radius:16px;
   --max:1120px;
+  --headerH:76px;
+  --shadow:0 18px 50px rgba(17,24,39,.10);
 }
 
-* { box-sizing:border-box; }
-body {
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
   margin:0;
   font-family:Inter,system-ui,sans-serif;
-  color:var(--dark);
+  color:var(--text);
   background:var(--bg);
 }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
 
-header {
-  height:72px;
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 24px;
+}
+
+header{
+  height:var(--headerH);
+  position:sticky;
+  top:0;
+  z-index:50;
   background:linear-gradient(90deg,var(--coral),var(--mint));
   display:flex;
   align-items:center;
 }
-
-.header-inner {
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 24px;
+.header-inner{
   width:100%;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:16px;
 }
-
-.brand img {
-  height:42px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
-
-nav a {
+.brand img{
+  height:52px;
+  width:auto;
+}
+nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+nav a{
   color:#fff;
-  margin-left:24px;
-  font-weight:600;
-  text-decoration:none;
+  font-weight:700;
+  opacity:.92;
+  letter-spacing:.1px;
 }
+nav a:hover{ opacity:1; }
 
-hero {
-  position: relative;
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-  padding: 0 6vw;
-  overflow: hidden;
+.header-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:44px;
+  padding:0 16px;
+  border-radius:14px;
+  background:rgba(0,0,0,.20);
+  color:#fff;
+  font-weight:800;
+  white-space:nowrap;
+  border:1px solid rgba(255,255,255,.18);
 }
+.header-cta:hover{ background:rgba(0,0,0,.26); }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
+.hero{
+  position:relative;
+  min-height:calc(82vh - var(--headerH));
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:var(--bg);
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
   background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.92) 0%,
-      rgba(255,255,255,0.82) 40%,
-      rgba(255,255,255,0.55) 65%,
-      rgba(255,255,255,0.15) 100%
-    ),
+    radial-gradient(900px 420px at 20% 10%, rgba(42,157,143,.20), transparent 60%),
+    radial-gradient(900px 420px at 80% 0%, rgba(247,110,80,.20), transparent 58%),
+    linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.82) 42%, rgba(255,255,255,.40) 70%, rgba(255,255,255,.10) 100%),
     url("./assets/brand/images/hero-consultation.jpg") center / cover no-repeat;
-  z-index: 0;
+  filter:saturate(1.02);
+  transform:scale(1.02);
+  z-index:0;
 }
-
-.hero-content {
-  position: relative;
-  max-width: 560px;
-  z-index: 1;
+.hero-inner{
+  position:relative;
+  z-index:1;
+  width:100%;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:18px;
+  padding:64px 0;
 }
-
-.hero h1 {
-  font-size: clamp(2.6rem, 4vw, 3.4rem);
-  line-height: 1.15;
-  margin-bottom: 16px;
+.hero-content{
+  max-width:620px;
 }
-
-.hero p {
-  font-size: 1.05rem;
-  color: #4b5563;
-  margin-bottom: 24px;
+.hero h1{
+  margin:0 0 14px;
+  font-size:clamp(2.5rem, 4.2vw, 3.5rem);
+  line-height:1.08;
+  letter-spacing:-.02em;
+  color:var(--dark);
 }
-
-.hero .cta {
-  margin-top:24px;
+.hero p{
+  margin:0 0 22px;
+  max-width:52ch;
+  font-size:1.05rem;
+  line-height:1.55;
+  color:var(--muted);
 }
-
-.hero .cta a {
-  display:inline-block;
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:48px;
+  padding:0 18px;
+  border-radius:14px;
+  font-weight:800;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+.btn-primary{
   background:var(--coral);
   color:#fff;
-  padding:14px 20px;
-  border-radius:12px;
-  font-weight:700;
-  text-decoration:none;
+  box-shadow:0 14px 28px rgba(247,110,80,.22);
 }
-
-.hero-image {
-  border-radius:var(--radius);
-  overflow:hidden;
+.btn-primary:hover{ filter:brightness(.98); }
+.btn-ghost{
+  background:rgba(255,255,255,.70);
+  border-color:rgba(17,24,39,.08);
+  color:var(--dark);
 }
+.btn-ghost:hover{ background:rgba(255,255,255,.84); }
 
-.hero-image img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.section {
+.section{
   padding:72px 0;
+}
+.section.soft{
   background:var(--soft);
 }
-
-.section-inner {
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 24px;
+.kicker{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  font-weight:800;
+  color:var(--dark);
+  margin:0 0 10px;
+}
+.h2{
+  margin:0 0 10px;
+  font-size:1.8rem;
+  letter-spacing:-.01em;
+  color:var(--dark);
+}
+.lede{
+  margin:0;
+  max-width:70ch;
+  color:var(--muted);
+  line-height:1.6;
 }
 
-.cards {
+.cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  margin-top:32px;
+  gap:22px;
+  margin-top:28px;
 }
-
-.card {
+.card{
   background:#fff;
   border-radius:var(--radius);
-  padding:24px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(17,24,39,.06);
+  border:1px solid rgba(17,24,39,.06);
+}
+.card-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+.card-icon{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(42,157,143,.18), rgba(247,110,80,.18));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.card-icon img{ width:22px; height:22px; }
+.card h3{
+  margin:0;
+  font-size:1.05rem;
+  color:var(--dark);
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.55;
 }
 
-.card img {
-  width:28px;
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:26px;
+}
+.step{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:22px;
+  border:1px solid rgba(17,24,39,.06);
+  box-shadow:0 10px 30px rgba(17,24,39,.06);
+}
+.step .num{
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  color:#fff;
+  background:linear-gradient(90deg, var(--coral), var(--mint));
   margin-bottom:12px;
 }
+.step h3{ margin:0 0 8px; color:var(--dark); }
+.step p{ margin:0; color:var(--muted); line-height:1.55; }
 
-footer {
-  background:#111;
-  color:#aaa;
-  text-align:center;
-  padding:24px;
+.split{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:22px;
+  align-items:start;
+  margin-top:22px;
 }
-
-@media (max-width:900px) {
-  .hero-inner { grid-template-columns:1fr; }
-  .cards { grid-template-columns:1fr 1fr; }
+.panel{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:22px;
+  border:1px solid rgba(17,24,39,.06);
+  box-shadow:0 10px 30px rgba(17,24,39,.06);
 }
+.panel h3{ margin:0 0 10px; color:var(--dark); }
+.panel p{ margin:0; color:var(--muted); line-height:1.6; }
 
-@media (max-width:600px) {
-  nav { display:none; }
-  .cards { grid-template-columns:1fr; }
+footer{
+  background:#0b0f14;
+  color:#9ca3af;
+  padding:28px 0;
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-inner a{ color:#cbd5e1; opacity:.85; }
+.footer-inner a:hover{ opacity:1; }
+
+@media (max-width:980px){
+  .cards{ grid-template-columns:repeat(2,1fr); }
+  .steps{ grid-template-columns:1fr; }
+  .split{ grid-template-columns:1fr; }
+  .brand img{ height:48px; }
+}
+@media (max-width:700px){
+  nav{ display:none; }
+  .header-cta{ display:none; }
+  .hero{ min-height:70vh; }
+  .hero-inner{ padding:54px 0; }
+  .cards{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -175,66 +316,165 @@ footer {
 <body>
 
 <header>
-  <div class="header-inner">
-    <a class="brand" href="./index.html">
-      <img src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png" alt="SmartSplit">
+  <div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="SmartSplit Home">
+      <img src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png" alt="SmartSplit" />
     </a>
-    <nav>
+
+    <nav aria-label="Primary navigation">
       <a href="#templates">Templates</a>
       <a href="#how">How It Works</a>
       <a href="#attorneys">Attorneys</a>
+      <a href="#resources">Resources</a>
     </nav>
+
+    <a class="header-cta" href="#start">Get Started</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div>
-      <h1>Navigate Divorce<br>with Confidence</h1>
-      <p>SmartSplit gives you structure, clarity, and tools to move forward—without chaos.</p>
-      <div class="cta">
-        <a href="#">Start Free</a>
-      </div>
-    </div>
+<main id="start">
 
-    <div class="hero-image">
-      <img src="./assets/brand/images/hero-consultation.jpg" alt="A consultation setting" loading="eager">
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>Navigate Divorce<br/>with Confidence</h1>
+      <p>SmartSplit gives you structure, clarity, and tools to move forward—without chaos.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#templates">Start Free</a>
+        <a class="btn btn-ghost" href="#how">How it Works</a>
+        <a class="btn btn-ghost" href="./SmartSplit_BrandGuide.html">Brand Guide</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="templates">
-  <div class="section-inner">
-    <h2>Why SmartSplit?</h2>
-    <p>Simple tools and guided steps to help you make progress and stay organized.</p>
+<section class="section soft" id="templates">
+  <div class="container">
+    <p class="kicker">Why SmartSplit?</p>
+    <h2 class="h2">Simple tools that keep you moving</h2>
+    <p class="lede">Guided steps, practical templates, and a calmer way to stay organized while you navigate a difficult transition.</p>
 
     <div class="cards">
       <div class="card">
-        <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
-        <h3>Trusted Guidance</h3>
-        <p>Clear steps, no overwhelm.</p>
+        <div class="card-top">
+          <div class="card-icon">
+            <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="" aria-hidden="true" />
+          </div>
+          <h3>Trusted Guidance</h3>
+        </div>
+        <p>Clear steps and checklists so you always know what’s next.</p>
       </div>
+
       <div class="card">
-        <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
-        <h3>Legal Templates</h3>
-        <p>Ready-to-use documents.</p>
+        <div class="card-top">
+          <div class="card-icon">
+            <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="" aria-hidden="true" />
+          </div>
+          <h3>Legal Templates</h3>
+        </div>
+        <p>Ready-to-use documents to reduce back-and-forth and confusion.</p>
       </div>
+
       <div class="card">
-        <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
-        <h3>Fair Splitting</h3>
-        <p>Transparency first.</p>
+        <div class="card-top">
+          <div class="card-icon">
+            <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="" aria-hidden="true" />
+          </div>
+          <h3>Fair Splitting</h3>
+        </div>
+        <p>Transparency-first tools to help you track and divide key items.</p>
       </div>
+
       <div class="card">
-        <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="">
-        <h3>Professional Network</h3>
-        <p>Help when you need it.</p>
+        <div class="card-top">
+          <div class="card-icon">
+            <img src="./assets/brand/icons/smartsplit-icon-3rings-256.png" alt="" aria-hidden="true" />
+          </div>
+          <h3>Professional Network</h3>
+        </div>
+        <p>When you need real help, find vetted support faster.</p>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section" id="how">
+  <div class="container">
+    <p class="kicker">How It Works</p>
+    <h2 class="h2">Start free. Stay organized. Get support.</h2>
+    <p class="lede">A simple workflow that reduces chaos and makes progress feel doable.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Choose your path</h3>
+        <p>Pick the templates and checklists that match your situation and timeline.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Track the essentials</h3>
+        <p>Keep notes, tasks, and key documents in one place so nothing gets lost.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Bring in help</h3>
+        <p>Connect with professionals when needed—without starting from scratch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="attorneys">
+  <div class="container">
+    <p class="kicker">Attorneys</p>
+    <h2 class="h2">A clearer way to connect</h2>
+    <p class="lede">Placeholder for directory + intake flow. This can become cards, filters, and a simple form.</p>
+
+    <div class="split">
+      <div class="panel">
+        <h3>Directory (coming soon)</h3>
+        <p>List attorneys by location, specialty, and availability. Add ratings later if you want.</p>
+      </div>
+      <div class="panel">
+        <h3>Quick intake</h3>
+        <p>Short form → send details → get matched. Keep it simple and fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resources">
+  <div class="container">
+    <p class="kicker">Resources</p>
+    <h2 class="h2">Guides, checklists, and FAQs</h2>
+    <p class="lede">Placeholder for expandable FAQs and short guides. Easy to add later without redesign.</p>
+
+    <div class="split">
+      <div class="panel">
+        <h3>FAQs</h3>
+        <p>Answer the common questions: paperwork, timing, communication, and next steps.</p>
+      </div>
+      <div class="panel">
+        <h3>Checklists</h3>
+        <p>Short, practical lists you can actually finish—organized by stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <footer>
-  © 2026 SmartSplit. All rights reserved.
+  <div class="container footer-inner">
+    <div>© 2026 SmartSplit. All rights reserved.</div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="#templates">Templates</a>
+      <a href="#how">How It Works</a>
+      <a href="#attorneys">Attorneys</a>
+      <a href="#resources">Resources</a>
+    </div>
+  </div>
 </footer>
 
 </body>
