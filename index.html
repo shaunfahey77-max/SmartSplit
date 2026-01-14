@@ -27,6 +27,9 @@
       color: var(--charcoal);
       background-color: #fff;
       line-height: 1.6;
+
+      /* Fix fixed-header overlap cleanly */
+      padding-top: 74px;
     }
 
     /* HEADER */
@@ -44,7 +47,16 @@
       z-index: 1000;
     }
 
-    /* Brand logo should never be color-manipulated with CSS */
+    /* OPTION A (THIS WAS MISSING): Logo pill background */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    /* Never color-manipulate the logo with CSS */
     .brand-logo {
       height: 40px;
       width: auto;
@@ -66,22 +78,22 @@
     /* HERO */
     .hero {
       position: relative;
-      background: url('./assets/images/hero-consultation.jpg') center 25% / cover no-repeat;
+      background: url('./assets/images/hero-consultation.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 12rem 2rem 10rem;
-      margin-top: 4.5rem;
-      min-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 14rem 2rem 10rem;
+      margin-top: 0; /* body padding handles header now */
     }
 
+    /* dark overlay for text contrast */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
       z-index: 0;
     }
 
@@ -237,21 +249,24 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        padding-top: 96px; /* header gets taller when stacked */
+      }
+
       header {
         flex-direction: column;
         padding: 1rem;
         gap: 0.75rem;
       }
-      .hero {
-        padding: 10rem 1.5rem 8rem;
-        background-position: center 30%;
-      }
+
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
+
       .hero p {
         font-size: 1rem;
       }
+
       nav a {
         margin-left: 0.75rem;
         margin-right: 0.75rem;
@@ -262,12 +277,17 @@
 
 <body>
   <header>
-    <!-- Dark header => use the white-on-dark 3-ring logo -->
-    <a href="./index.html" aria-label="SmartSplit Home">
+    <a href="./index.html" aria-label="SmartSplit Home" class="brand">
       <img
         class="brand-logo"
-        src="./assets/brand/logos/smartsplit-horizontal-3rings-white-on-dark-1200.png"
-        alt="SmartSplit Logo"
+        src="./assets/brand/logos/smartsplit-horizontal-3rings-1200.png"
+        srcset="
+          ./assets/brand/logos/smartsplit-horizontal-3rings-800.png 800w,
+          ./assets/brand/logos/smartsplit-horizontal-3rings-1200.png 1200w,
+          ./assets/brand/logos/smartsplit-horizontal-3rings-2000.png 2000w
+        "
+        sizes="160px"
+        alt="SmartSplit"
         decoding="async"
       />
     </a>
@@ -293,7 +313,7 @@
   <section class="intro">
     <h2>Why Choose SmartSplit</h2>
     <p>SmartSplit was built to make separation and co-parenting less overwhelming.
-       Our guided tools and trusted network of professionals help you move forward with clarity and care.</p>
+      Our guided tools and trusted network of professionals help you move forward with clarity and care.</p>
   </section>
 
   <section class="features">
