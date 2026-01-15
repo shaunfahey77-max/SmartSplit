@@ -102,18 +102,18 @@ nav a:hover{ opacity:1; }
   overflow:hidden;
   background:var(--bg);
 }
-.hero-bg{
+.hero-media {
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(900px 420px at 20% 10%, rgba(42,157,143,.20), transparent 60%),
-    radial-gradient(900px 420px at 80% 0%, rgba(247,110,80,.20), transparent 58%),
-    linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.82) 42%, rgba(255,255,255,.40) 70%, rgba(255,255,255,.10) 100%),
-    url("./assets/brand/images/hero-consultation.jpg") 70% 20% / cover no-repeat;
-
-  filter:saturate(1.02);
-  transform:scale(1.02);
   z-index:0;
+}
+
+.hero-media img {
+  width:100%;
+  height:100%;
+  object-fit:contain;          /* <- THIS is the key */
+  object-position:center top; /* protects faces */
+  background:#f5f7f9;
 }
 .hero-inner{
   position:relative;
@@ -340,7 +340,14 @@ footer{
 <main id="start">
 
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-media" aria-hidden="true">
+  <img
+    src="./assets/brand/images/hero-consultation.jpg"
+    alt=""
+    loading="eager"
+  />
+</div>
+
   <div class="container hero-inner">
     <div class="hero-content">
       <h1>Navigate Divorce<br/>with Confidence</h1>
